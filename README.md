@@ -4,6 +4,27 @@ Public dataset of all [Sefaria](https://www.sefaria.org) texts, hosted on Google
 
 This repository is a lightweight index and set of tools for accessing the Sefaria text corpus. The actual text data (~26GB, ~85K files) lives in a public GCS bucket and can be downloaded without authentication.
 
+## Cloning
+
+This repository holds only its current state, so a normal clone is small (~25 MB):
+
+```bash
+git clone https://github.com/Sefaria/Sefaria-Export.git
+```
+
+Its git history previously accumulated monthly snapshots of `books.json`, which made a
+clone ~14 GB. In September 2026 that history was moved to a separate archive repo.
+
+**You almost certainly don't need the history.** The current index (`books.json`) and
+tooling are here, and all text data lives in the GCS bucket described below.
+
+If you *do* need historical snapshots, the complete pre-reset commit graph is preserved
+read-only at
+[**Sefaria/Sefaria-Export-Archive**](https://github.com/Sefaria/Sefaria-Export-Archive).
+
+If you cloned this repo before the reset, `git pull` will report *"refusing to merge
+unrelated histories"* — re-clone instead.
+
 ## Quick Start
 
 ### Browse what's available
